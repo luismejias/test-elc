@@ -1,0 +1,1 @@
+{"version":3,"sources":["card.scss"],"names":[],"mappings":"AAAA,WACI,aAAY,CACZ,wBAAuB,CACvB,cAAa,CACb,mBAAkB,CAClB,wBAAuB,EAC1B","file":"card.css","sourcesContent":["div#Card {\r\n    width: 300px;\r\n    background-color: white;\r\n    height: 300px;\r\n    border-radius: 5px;\r\n    border: 1px solid green;\r\n}"]}
