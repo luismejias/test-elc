@@ -29,6 +29,16 @@ section#home { position: absolute; width: 100%; min-height: 100vh; top: 0; left:
 
 section#home div.content { max-width: 1280px; margin: 0 auto; color: #FFF; }
 
+section#home div.content__count { color: white; font-size: 24px; }
+
+section#home div.content__sub-content { margin-top: 70px; display: -webkit-box; display: -ms-flexbox; display: flex; width: 100%; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+
+section#home div.content__buttons { display: -webkit-box; display: -ms-flexbox; display: flex; width: 110px; -ms-flex-pack: distribute; justify-content: space-around; }
+
+section#home div.content__button { cursor: pointer; border: 1px solid white; padding: 8px; -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 5px; }
+
+section#home div.content__button:hover { color: black; background-color: beige; }
+
 .card { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; margin-top: 50px; }
 
 .card__item { -webkit-box-align: center; -ms-flex-align: center; align-items: center; background-color: rgba(0, 0, 0, 0.5); border-radius: 5px; border: 2px solid gray; -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5); box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5); display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; margin-bottom: 8px; }

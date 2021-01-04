@@ -20,38 +20,51 @@
 }
 */
 const data = require('./data');
-const http = require('http');
+const express = require('express');
+const app = express();
 const hostname = 'localhost';
 const port = 3035;
+const bodyParser = require('body-parser');
+const { validateState, filterProduct, filterTag } = require('./utils/utils');
 
-/**
- * Start the Node Server Here...
- *
- * The http.createServer() method creates a new server that listens at the specified port.
- * The reqListener function (function (req, res)) is executed each time the server gets a req.
- * The req object 'req' represents the req to the server.
- * The ServerResponse object 'res' represents the writable stream back to the client.
- */
-http.createServer((req, res) => {
+app.use((req, res, next) => {
+  res.append('Access-Control-Allow-Origin', ['http://localhost:3030']);
+  res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.append('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.post('/products', async (req, res) => {
+  try {
+    let searching = await req.body.data;
+    let limit = await req.body.limit;
+    let page = await req.body.page;
+
+    const productResult = data.filter((product) => {
+      return validateState(product)
+    });
+
+    const productTag = productResult.filter((product) => {
+      let tagAux = '';
+      product.tags.filter(tag => {
+        tagAux = filterTag(tag, searching);
+      })
+      return tagAux;
+    });
+
+    const count = await productResult.length;
+    const totalPages = Math.ceil(count / limit);
     const { headers, method, url } = req;
-    res.setHeader('Content-Type', 'application/json');
-    // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3030');
+    const responseBody = { headers, method, url, data: productTag, length: count };
+    res.json(responseBody);
+  } catch (err) {
+    return res.status(500).json(err)
+  }
+});
 
-    // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-    // Request headers you wish to allow
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
-    if (req.method === "GET" && req.url ==='/products') {
-        res.statusCode = 200;
-        const responseBody = { headers, method, url, data };
-        res.write(JSON.stringify(responseBody));
-    } else {
-        const error = {error: 'Method not allowed'}
-        res.write(JSON.stringify(error));
-    }
-    res.end(); //end the response
-}).listen(port);
-console.log(`[Server running on ${hostname}:${port}]`);
+app.listen(port, () => {
+  console.log(`[Server running on ${hostname}:${port}]`);
+});

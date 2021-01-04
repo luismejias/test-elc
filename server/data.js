@@ -1,20 +1,20 @@
 var data = [
     {
         "_id": "001",
-        "isActive": "true",
+        "isActive": true,
         "price": "20.00",
         "picture": "/img/products/N0CA_430.png",
         "name": "Damage Reverse Oil Conditioner",
         "about": "Dolor voluptate velit consequat duis. Aute ad officia fugiat esse anim exercitation voluptate excepteur pariatur sit culpa duis qui esse. Labore amet ad eu veniam nostrud minim labore aliquip est sint voluptate nostrud reprehenderit. Ipsum nostrud culpa consequat reprehenderit.",
         "tags": [
-            "ojon", 
+            "ojon",
             "oil",
             "conditioner"
         ]
     },
     {
         "_id": "002",
-        "isActive": "true",
+        "isActive": true,
         "price": "22.00",
         "picture": "/img/products/N0EN01_430.png",
         "name": "Volume Advance Conditioner",
@@ -26,7 +26,7 @@ var data = [
     },
     {
         "_id": "003",
-        "isActive": "true",
+        "isActive": true,
         "price": "30.00",
         "picture": "/img/products/N0EY01_430.png",
         "name": "Volume Advance Shampoo",
@@ -38,7 +38,7 @@ var data = [
     },
     {
         "_id": "004",
-        "isActive": "true",
+        "isActive": true,
         "price": "20.00",
         "picture": "/img/products/N0FP_430.png",
         "name": "Damage Reverse Oil Shampoo",
@@ -51,7 +51,7 @@ var data = [
     },
     {
         "_id": "005",
-        "isActive": "true",
+        "isActive": true,
         "price": "7.00",
         "picture": "/img/products/N0H101_430.png",
         "name": "Color Sustain Pro",
@@ -63,7 +63,7 @@ var data = [
     },
     {
         "_id": "006",
-        "isActive": "true",
+        "isActive": true,
         "price": "38.00",
         "picture": "/img/products/N0J801_430.png",
         "name": "Damage Reverse Hair Serum",
@@ -75,7 +75,7 @@ var data = [
     },
     {
         "_id": "007",
-        "isActive": "true",
+        "isActive": true,
         "price": "38.00",
         "picture": "/img/products/N0J901_430.png",
         "name": "Damage Reverse Restorative Hair Treatment",
@@ -84,10 +84,10 @@ var data = [
             "ojon",
             "treatment"
         ]
-    }, 
+    },
     {
         "_id": "008",
-        "isActive": "true",
+        "isActive": true,
         "price": "27.00",
         "picture": "/img/products/N0PL01_430.png",
         "name": "Super Sleek Conditioner",
@@ -96,10 +96,10 @@ var data = [
             "ojon",
             "conditioner"
         ]
-    }, 
+    },
     {
         "_id": "009",
-        "isActive": "true",
+        "isActive": true,
         "price": "17.00",
         "picture": "/img/products/N0YJ01_430.png",
         "name": "Rare Blend Oil",
@@ -109,10 +109,10 @@ var data = [
             "oil",
             "rare blend"
         ]
-    }, 
+    },
     {
         "_id": "010",
-        "isActive": "true",
+        "isActive": true,
         "price": "22.00",
         "picture": "/img/products/N08X_430.png",
         "name": "Dry Recovery Hydrating Shampoo",
@@ -122,10 +122,10 @@ var data = [
             "hydrating",
             "shampoo"
         ]
-    }, 
+    },
     {
         "_id": "011",
-        "isActive": "true",
+        "isActive": true,
         "price": "22.00",
         "picture": "/img/products/N08Y_430.png",
         "name": "Dry Recovery Hydrating Conditioner",
@@ -135,10 +135,10 @@ var data = [
             "hydrating",
             "conditioner"
         ]
-    }, 
+    },
     {
         "_id": "012",
-        "isActive": "true",
+        "isActive": true,
         "price": "12.00",
         "picture": "/img/products/N12R01_430.png",
         "name": "Rare Blend Deep Conditioner",
@@ -148,10 +148,10 @@ var data = [
             "conditioner",
             "rare blend"
         ]
-    }, 
+    },
     {
         "_id": "013",
-        "isActive": "true",
+        "isActive": true,
         "price": "25.00",
         "picture": "/img/products/N13J01_430.png",
         "name": "Rare Blend Moisture-Rich Cleansing Conditioner",
@@ -162,10 +162,10 @@ var data = [
             "conditioner",
             "rare blend"
         ]
-    }, 
+    },
     {
         "_id": "014",
-        "isActive": "true",
+        "isActive": true,
         "price": "17.00",
         "picture": "/img/products/N15E01_430.png",
         "name": "Rare Blend Protecting Treatment",
@@ -175,10 +175,10 @@ var data = [
             "treatment",
             "rare blend"
         ]
-    }, 
+    },
     {
         "_id": "015",
-        "isActive": "true",
+        "isActive": true,
         "price": "15.00",
         "picture": "/img/products/N17R01_430.png",
         "name": "Rare Blend Oil Rejuvenating Therapy Lightweight Texture",
@@ -188,10 +188,10 @@ var data = [
             "oil",
             "rare blend"
         ]
-    }, 
+    },
     {
         "_id": "016",
-        "isActive": "false",
+        "isActive": false,
         "price": "25.00",
         "picture": "/img/products/N098_430.png",
         "name": "Damage Reverse Restorative Hair Treatment",
@@ -200,10 +200,10 @@ var data = [
             "ojon",
             "treatment"
         ]
-    }, 
+    },
     {
         "_id": "017",
-        "isActive": "true",
+        "isActive": true,
         "price": "17.00",
         "picture": "/img/products/N16201_430.png",
         "name": "Rare Blend Infusion Shampoo",
@@ -213,10 +213,10 @@ var data = [
             "shampoo",
             "rare blend"
         ]
-    }, 
+    },
     {
         "_id": "018",
-        "isActive": "true",
+        "isActive": true,
         "price": "20.00",
         "picture": "/img/products/N16401_430.png",
         "name": "Damage Reverse Thickening Shampoo",
@@ -225,10 +225,10 @@ var data = [
             "ojon",
             "shampoo"
         ]
-    }, 
+    },
     {
         "_id": "019",
-        "isActive": "false",
+        "isActive": false,
         "price": "23.00",
         "picture": "/img/products/N16501_430.png",
         "name": "Damage Reverse Thickening Conditioner",
@@ -237,10 +237,10 @@ var data = [
             "ojon",
             "conditioner"
         ]
-    }, 
+    },
     {
         "_id": "020",
-        "isActive": "false",
+        "isActive": false,
         "price": "40.00",
         "picture": "/img/products/N19601_430.png",
         "name": "Rare Blend Oil Moisture Therapy Medium Texture",

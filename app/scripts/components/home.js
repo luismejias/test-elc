@@ -5,32 +5,26 @@
 import React from 'react';
 import Card from '../components/card';
 
-class Home extends React.Component {
-
-  constructor(props) {
-    super(props);
-  }
-
-  /**
-   * Renders the default app in the window, we have assigned this to an element called root.
-   *
-   * @returns JSX
-   * @memberof Home
-  */
-
-  render() {
-    const component = this.props.productList ? <Card product={this.props.productList} /> : <Card />;
-    return (
-      <section id="home">
-        <div className="content">
-          {component}
-        </div>
-      </section>
-    );
-  }
-
-
+const Home = (props) => {
+  let subContent = ''
+  const component = props.productList ? <Card product={props.productList} /> : <Card />;
+  const showCount = props.length ? <div className="content__count"> Displaying {props.productList.length} of {props.length} Results</div> : '';
+  const buttons = <div className="content__buttons">
+    <div className="content__button" onClick={props.prevPage}>Prev</div>
+    <div className="content__button" onClick={props.nextPage}>Next</div>
+  </div>
+  subContent = (props.productList && props.productList.length > 0) ? <div className="content__sub-content">
+    {showCount}
+    {buttons}
+  </div> : '';
+  return (
+    <section id="home">
+      <div className="content">
+        {subContent}
+        {component}
+      </div>
+    </section>
+  );
 }
-
 // Export out the React Component
 module.exports = Home;
