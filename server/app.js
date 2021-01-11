@@ -39,26 +39,33 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/products', async (req, res) => {
   try {
-    let searching = await req.body.data;
-    let limit = await req.body.limit;
-    let page = await req.body.page;
+    const searching = await req.body.data;
+    const limit = await req.body.limit;
+    const page = await req.body.page;
 
-    const productResult = data.filter((product) => {
+    const productResultState = data.filter((product) => {
       return validateState(product)
     });
 
-    const productTag = productResult.filter((product) => {
-      let tagAux = '';
-      product.tags.filter(tag => {
-        tagAux = filterTag(tag, searching);
-      })
+    const productResult = productResultState.filter((product) => {
+     return filterProduct(product, searching)
+    });
+
+    const productTag = productResultState.filter((product) => {
+      let tagAux = false;
+       product.tags.filter(tag => {
+         if (filterTag(tag, searching))
+         tagAux = true;
+      });
       return tagAux;
     });
 
-    const count = await productResult.length;
+    let productResultDef = new Set([...productResult, ...productTag]);
+    productResultDef = [...productResultDef];
+    const count = await productResultState.length;
     const totalPages = Math.ceil(count / limit);
     const { headers, method, url } = req;
-    const responseBody = { headers, method, url, data: productTag, length: count };
+    const responseBody = { headers, method, url, data: productResultDef, length: count };
     res.json(responseBody);
   } catch (err) {
     return res.status(500).json(err)
